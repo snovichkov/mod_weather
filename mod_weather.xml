@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>mod_weather</name>
+	<author>CyberApp</author>
+	<creationDate>February 2014</creationDate>
+	<copyright>Copyright (C) 2014 CyberApp. All rights reserved.</copyright>
+	<license>The MIT License (MIT); see LICENSE</license>
+	<authorEmail>info@cyberapp.ru</authorEmail>
+	<authorUrl>www.cyberapp.ru</authorUrl>
+	<version>1.0.0</version>
+	<description>MOD_WEATHER_XML_DESCRIPTION</description>
+	<files>
+		<folder>fields</folder>
+        <folder>languages</folder>
+        <folder>tmpl</folder>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <filename module="mod_weather">mod_weather.php</filename>
+        <filename>mod_weather.xml</filename>
+    </files>
+	<languages>
+		<language tag="ru-RU">languages/ru-RU/ru-RU.mod_weather.ini</language>
+		<language tag="ru-RU">languages/ru-RU/ru-RU.mod_weather.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_weather/fields">
+			<fieldset name="basic">
+				<field
+					name="city"
+					type="city"
+					default="2029043"
+					label="MOD_WEATHER_FIELD_CITY_LABEL"
+					description="MOD_WEATHER_FIELD_CITY_DESC" />
+			</fieldset>
+			<fieldset
+				name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
